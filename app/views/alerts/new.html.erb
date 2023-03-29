@@ -3,8 +3,11 @@
   <h3>Add new Alert</h3>
     <%= form_for @alert, url: alerts_path, method: :post, :html => {:class => "w-75 mt-4"} do |form| %>
   <div class=" mb-3 w-100">
-  <%= form.label :name, 'Type', class: "form-label" %>  
-  <%= form.text_field :name, placeholder: "Enter the Type", class:"form-control" %>
+<select name="alert[name]" id="alert_name" class="form-control required="required">
+    <option value="">Select Type</option>
+    <option value="portal_opened">portal_opened</option>
+    <option value="portal_closed">portal_closed</option>
+</select>
 </div>
 <div class=" mb-3 w-100">
   <%= form.label :tag, 'Tag', class: "form-label" %>

@@ -38,20 +38,20 @@ class AlertsController < ApplicationController
 
   # PATCH/PUT /alerts/1 or /alerts/1.json
   def update
-    respond_to do |format|
-      if @alert.update(alert_params)
-        format.html { redirect_to alert_url(@alert), notice: "Alert was successfully updated." }
-        format.json { render :show, status: :ok, location: @alert }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @alert.errors, status: :unprocessable_entity }
-      end
-    end
-    # @alert = Alert.find(params[:id])
+    # respond_to do |format|
+    #   if @alert.update(alert_params)
+    #     format.html { redirect_to alert_url(@alert), notice: "Alert was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @alert }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @alert.errors, status: :unprocessable_entity }
+    #   end
+    # end
+    @alert = Alert.find(params[:id])
 
-    # @alert.update(alert_params)
+    @alert.update(alert_params)
 
-    # redirect_to alert_path(@alert)
+    redirect_to alert_path(@alert)
   end
 
   # DELETE /alerts/1 or /alerts/1.json
