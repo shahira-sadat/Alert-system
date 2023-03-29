@@ -1,9 +1,24 @@
-<h1>New alert</h1>
 
-<%= render "form", alert: @alert %>
+<div class="container-fluid w-100 d-flex flex-column align-items-center mt-5">
+  <h3>Add new Alert</h3>
+    <%= form_for @alert, url: alerts_path, method: :post, :html => {:class => "w-75 mt-4"} do |form| %>
+  <div class=" mb-3 w-100">
+  <%= form.label :name, 'Type', class: "form-label" %>  
+  <%= form.text_field :name, placeholder: "Enter the Type", class:"form-control" %>
+</div>
+<div class=" mb-3 w-100">
+  <%= form.label :tag, 'Tag', class: "form-label" %>
+  <%= form.text_field :tag, placeholder: "Enter the tag", class:"form-control" %>
+</div>
+<div class=" mb-3 w-100">
+  <%= form.label :description, 'Description', class: "form-label" %>
+  <%= form.text_field :description, placeholder: "Enter the Description", class:"form-control" %>
+</div>
+<div class=" mb-3 w-100">
+  <%= form.label :origin, 'Origin', class: "form-label" %>
+  <%= form.text_field :origin, placeholder: "Enter the origin", class:"form-control" %>
+</div>
+ <%= form.submit 'Create Alert' ,class: "btn btn-success text-white" %>
+<% end %>
 
-<br>
-
-<div>
-  <%= link_to "Back to alerts", alerts_path %>
 </div>

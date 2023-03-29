@@ -1,10 +1,18 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @alert %>
-
-<div>
-  <%= link_to "Edit this alert", edit_alert_path(@alert) %> |
+<div class="container-fluid w-100 d-flex flex-column align-items-center mt-5">
+<h1>Alert Details</h1>
+<table class="table table-striped mt-2" style="width: 95%;">
+  <thead class="bg-info">
+      <th scope="col">Alert Type</th>
+      <th scope="col">Tag</th>
+      <th scope="col">Description</th>
+      <th scope="col">Origin</th>
+  </thead>
+    <tr>
+      <td><%= @alert.name %></td>
+      <td><%= @alert.tag %></td>
+      <td><%= @alert.description %></td>
+      <td><%= @alert.origin %></td>
+    </tr>
+</table>
   <%= link_to "Back to alerts", alerts_path %>
-
-  <%= button_to "Destroy this alert", @alert, method: :delete %>
 </div>

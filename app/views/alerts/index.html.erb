@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Alerts</h1>
-
-<div id="alerts">
+<div class="container-fluid d-flex flex-column align-items-center">
+<h1 class="mt-5 mb-2">Alerts</h1>
+<table class="table table-striped mt-2" style="width: 95%;">
+  <thead class="bg-info">
+      <th scope="col">ID</th>
+      <th scope="col">Alert Type</th>
+      <th scope="col">Tag</th>
+      <th scope="col">Description</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Remove</th>
+  </thead>
   <% @alerts.each do |alert| %>
-    <%= render alert %>
-    <p>
-      <%= link_to "Show this alert", alert %>
-    </p>
+    <tr>
+      <td><%= alert.id %></td>
+      <td><%= alert.name %></td>
+      <td><%= alert.tag %></td>
+      <td><%= alert.description %></td>
+      <td><%= alert.origin %></td>
+      <td><%= button_to 'Edit', edit_alert_path(alert), method: 'get', class: "btn btn-outline-primary btn-sm" %></td>
+      <td><%= button_to 'Remove', alert_path(alert), method: 'delete', class: "btn btn-outline-danger btn-sm" %></td>
+    </tr>
   <% end %>
+</table>
+<%= link_to 'Add a new alert', new_alert_path, class: "btn btn-success  py-2 px-5 text-white fs-5" %>
 </div>
-
-<%= link_to "New alert", new_alert_path %>
