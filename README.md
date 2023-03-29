@@ -1,6 +1,7 @@
 # Alert System
 > A small example alert app with the basic Rails CRUD in which you can read, edit, update and remove alerts.
-<img width="1428" alt="Screen Shot 2023-03-29 at 5 51 10 PM" src="https://user-images.githubusercontent.com/53530780/228554050-afd746d3-c3fa-4363-ae58-4cecdefda162.png">
+<img width="1402" alt="Screen Shot 2023-03-29 at 8 56 27 PM" src="https://user-images.githubusercontent.com/53530780/228604734-f8726146-b08a-46fa-9a27-dd7b26ce9a7a.png">
+
 
 ## Made With
 - Ruby on Rails
