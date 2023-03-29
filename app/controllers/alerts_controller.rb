@@ -8,6 +8,7 @@ class AlertsController < ApplicationController
 
   # GET /alerts/1 or /alerts/1.json
   def show
+    @alert = Alert.find(params[:id])
   end
 
   # GET /alerts/new
@@ -17,6 +18,7 @@ class AlertsController < ApplicationController
 
   # GET /alerts/1/edit
   def edit
+    @alert = Alert.find(params[:id])
   end
 
   # POST /alerts or /alerts.json
@@ -45,6 +47,11 @@ class AlertsController < ApplicationController
         format.json { render json: @alert.errors, status: :unprocessable_entity }
       end
     end
+    # @alert = Alert.find(params[:id])
+
+    # @alert.update(alert_params)
+
+    # redirect_to alert_path(@alert)
   end
 
   # DELETE /alerts/1 or /alerts/1.json
@@ -65,6 +72,6 @@ class AlertsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def alert_params
-      params.fetch(:alert, {})
+      params.require(:alert).permit(:name, :tag, :description, :origin) 
     end
 end
